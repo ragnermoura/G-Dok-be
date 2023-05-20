@@ -1,0 +1,22 @@
+{
+  "name": "g-dok-be",
+  "version": "1.0.0",
+  "description": "Backend do projeto de documento",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ragnermoura/G-Dok-be.git"
+  },
+  "author": "Willian Ragner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ragnermoura/G-Dok-be/issues"
+  },
+  "homepage": "https://github.com/ragnermoura/G-Dok-be#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
