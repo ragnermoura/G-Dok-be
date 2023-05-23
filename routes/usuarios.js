@@ -81,7 +81,6 @@ router.post("/cadastro", imageUpload.single('imagem'), async (req, res, next) =>
       cpf: req.body.cpf,
       id_nivel: req.body.nivel,
       id_status: req.body.status,
-      id_perfil: req.body.perfil,
       avatar: req.file.filename,
     });
 
