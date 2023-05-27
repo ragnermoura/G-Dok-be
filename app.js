@@ -11,7 +11,8 @@ const rotaDocumento = require('./routes/documento')
 const rotaEmpresa = require('./routes/empresa')
 const rotaNivel = require('./routes/nivel')
 const rotaTipo = require('./routes/tipo')
-const rotaUsuario = require('./routes/usuario')
+const rotaUsuario = require('./routes/usuarios')
+const rotaLogin = require('./routes/login')
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -39,6 +40,7 @@ app.use('/empresa', rotaEmpresa);
 app.use('/nivel', rotaNivel);
 app.use('/tipo', rotaTipo);
 app.use('/usuario', rotaUsuario);
+app.use('/login', rotaLogin);
 
 
 app.get('/api/test', (req,res) => {

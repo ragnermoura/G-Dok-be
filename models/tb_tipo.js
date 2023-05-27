@@ -8,7 +8,6 @@ const Tipo = conn.define('tb_tipo', {
     allowNull: false,
     primaryKey: true
   },
-
   tipo: {
     type: DataTypes.STRING,
     allowNull: false

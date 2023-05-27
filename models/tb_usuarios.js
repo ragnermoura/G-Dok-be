@@ -2,12 +2,11 @@ const { Sequelize, DataTypes } = require("sequelize");
 
 const conn = require("../db/conn");
 
-const nivel = require("./nivel");
-const status = require("./status");
-const perfil = require("./perfil");
+const nivel = require("./tb_nivel");
+
 
 const Usuario = conn.define(
-  "tb001_usuarios",
+  "tb_usuarios",
   {
     id_user: {
       type: Sequelize.INTEGER,
@@ -32,10 +31,6 @@ const Usuario = conn.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
-    cpf: {
-      type: Sequelize.STRING,
-      allowNull: true,
-    },
     id_nivel: {
       type: Sequelize.INTEGER,
       allowNull: true,
@@ -56,17 +51,7 @@ Usuario.belongsTo(nivel, {
   foreignKeyConstraint: "id_nivel",
 });
 
-Usuario.belongsTo(status, {
-  foreignKey: "id_status",
-  constraints: true,
-  foreignKeyConstraint: "id_status",
-});
 
-Usuario.belongsTo(perfil, {
-  foreignKey: "id_perfil",
-  constraints: true,
-  foreignKeyConstraint: "id_perfil",
-});
 
 
 module.exports = Usuario;

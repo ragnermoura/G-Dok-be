@@ -8,7 +8,6 @@ const Nivel = conn.define('tb_nivel', {
     allowNull: false,
     primaryKey: true
   },
-
   nivel: {
     type: DataTypes.STRING,
     allowNull: false

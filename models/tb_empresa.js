@@ -8,7 +8,6 @@ const Empresa = conn.define('tb_empresa', {
     allowNull: false,
     primaryKey: true
   },
-
   razao: {
     type: DataTypes.STRING,
     allowNull: false

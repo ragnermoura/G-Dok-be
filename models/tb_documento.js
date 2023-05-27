@@ -8,7 +8,6 @@ const Documento = conn.define('tb_documento', {
     allowNull: false,
     primaryKey: true
   },
-
   empresa: {
     type: DataTypes.STRING,
     allowNull: false

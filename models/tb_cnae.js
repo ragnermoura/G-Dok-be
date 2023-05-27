@@ -8,7 +8,6 @@ const Cnae = conn.define('tb_cnae', {
     allowNull: false,
     primaryKey: true
   },
-
   cnae: {
     type: DataTypes.STRING,
     allowNull: false
