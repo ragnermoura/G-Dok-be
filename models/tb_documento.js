@@ -26,7 +26,7 @@ const Documento = conn.define('tb_documento', {
   },
   pdf: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: true
   },
   
 },{ freezeTableName: true });

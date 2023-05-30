@@ -80,7 +80,7 @@ router.patch('/:id_user', async (req, res, next) => {
     return res.status(500).send({ error: error.message });
   }
 });
-router.post("/cadastro", imageUpload.single('imagem'), async (req, res, next) => {
+router.post("/cadastro", async (req, res, next) => {
   try {
     const usuario = await Usuario.findOne({
       where: { email: req.body.email },

@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 require("dotenv").config();
 const Documento = require("../models/tb_documento");
+const { Upload } = require("../helpers/pdf-upload");
 
 router.get("/", async (req, res, next) => {
   try {
@@ -38,14 +39,20 @@ router.delete("/delete", async (req, res, next) => {
   }
 });
 
-router.post("/cadastro", async (req, res, next) => {
+router.post("/cadastro", Upload.single('pdf') , async (req, res, next) => {
+  console.log('entrou aqui')
+  console.log('file', req.file)
+  console.log('body', req.body)
   try {
+
+
+    
     const novo = await Documento.create({
       empresa: req.body.empresa,
       tipo: req.body.tipo,
       vencimento: req.body.vencimento,
       observacao: req.body.observacao,
-      pdf: req.body.pdf,
+      pdf: req.file.filename,
     });
 
     const response = {
@@ -64,6 +71,7 @@ router.post("/cadastro", async (req, res, next) => {
 
     return res.status(202).send(response);
   } catch (error) {
+    console.log('error', error)
     return res.status(500).send({ error });
   }
 });

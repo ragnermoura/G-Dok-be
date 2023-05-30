@@ -6,8 +6,6 @@ const imageStorage = multer.diskStorage({
   destination: function (req, file, cb) {
     let folder = "";
 
-    console.log(req)
-
     if (req.baseUrl.includes('documento')) {
       folder = "documento";
     } else if (req.baseUrl.includes('usuarios')) {
@@ -20,15 +18,15 @@ const imageStorage = multer.diskStorage({
   },
 });
 
-const imageUpload = multer({
+const Upload = multer({
   storage: imageStorage,
   fileFilter(req, file, cb) {
-    if (!file.originalname.match(/\.(png|jpg|pdf|jpeg)$/)) {
+    if (!file.originalname.match(/\.(pdf)$/)) {
       // upload only png and jpg format
-      return cb(new Error("Por favor, envie apenas png ou jpg!"));
+      return cb(new Error("Por favor, envie apenas pdf"));
     }
     cb(undefined, true);
   },
 });
 
-module.exports = { imageUpload };
+module.exports = { Upload };
