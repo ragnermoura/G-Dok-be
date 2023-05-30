@@ -58,8 +58,6 @@ router.delete('/delete', async (req, res, next) => {
   }
 });
 
-
-
 router.patch('/:id_user', async (req, res, next) => {
   try {
     const usuario = await Usuario.findByPk(req.params.id_user);
@@ -102,10 +100,8 @@ router.post("/cadastro", imageUpload.single('imagem'), async (req, res, next) =>
       sobrenome: req.body.sobrenome,
       email: req.body.email,
       senha: senhaHash,
-      cpf: req.body.cpf,
       id_nivel: req.body.nivel,
       id_status: req.body.status,
-      avatar: req.file.filename,
     });
 
     const response = {
